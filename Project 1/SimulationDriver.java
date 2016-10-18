@@ -6,6 +6,7 @@ public class SimulationDriver {
 		
 		Question type = new Question(typeofQuestion);
 		
+		//randomly choose a question type
 		IVoteService service;
 		if(type.getQuestionType() == 0){
 			service = new Multiple();
@@ -13,6 +14,7 @@ public class SimulationDriver {
 			service = new Single();
 		}
 		
+		//create random student ID and submit answers
 		for(int i = 0; i < numofStudent.length; i++) {
 			numofStudent[i] = new Student(Integer.toString(i));
 			if(type.getQuestionType() == 0) {
